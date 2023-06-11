@@ -1,0 +1,26 @@
+<!-- result.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Object Detection Results</title>
+    <!-- Add CSS styling -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h2>Object Detection Results</h2>
+    {% if results %}
+        {% for result in results %}
+            <div class="result">
+                <h3>Result {{ forloop.counter }}</h3>
+                <ul>
+                    {% for object in result %}
+                        <li>{{ object }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+</body>
+</html>
