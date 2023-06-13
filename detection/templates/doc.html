@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% block content %}
+<header>
+  <div class="jumbotron jumbotron-fluid" id="banner">
+    <div class="parallax text-center" 
+    style="background-image:url(../static/css/background2.webp);">
+      <div class="parallax-pattern-overlay">
+        <div class="container text-center" style="height:580px;padding-top:170px;">
+          {% comment %} <a href="#"><img id="site-title" src="" alt="logo"/></a> {% endcomment %}
+          <h2 class="display-2">Abandoned Object Detection</h2>
+          <h3 class="learn">Welcome to the Abandoned Object Detection project. This website utilizes computer vision techniques to detect abandoned objects in videos. Upload your video below to get started.</h3>
+          <form method="post" action="{% url 'upload_video' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" id="video" name="video" accept="video/*" placeholder = "upload_video" required><br>
+            <input type="submit" value="Upload">
+        </form>
+        </div>
+</div>
+</div>
+</header>
+
+<section id="section about-section" class="pt-5 pb-5">
+  <div class="container wrapabout">
+      <div class="red"></div>
+      <div class="row">
+          <div class="col-lg-6 align-items-center justify-content-left d-flex mb-5 mb-lg-0">
+              <div class="blockabout">
+                  <div class="blockabout-inner text-center text-sm-start">
+                      <div class="title-big pb-3 ">
+                          <h3>About the project</h3>
+                      </div>
+                      <p class="description-p text-muted pe-0 pe-lg-0">
+                        This website deals with the detection of Abandoned Object.
+                        This paper is focused towards developing a computer vision-based 
+                        approach that analyzes the blob areas to detect any abandoned objects
+                         and instantaneously send appropriate alerts without any human intervention. 
+                         The approach has been tested with various benchmark video datasets and 
+                         real-time video sequences as well. In this project, we’re going to make 
+                         an Abandoned object detection system using OpenCV and python. OpenCV is 
+                         a real-time computer vision and image processing library for python. 
+                         OpenCV is very popular because it is lightweight and contains 
+                         more than 2500 image processing algorithms. </p>
+                      <p class="description-p text-muted pe-0 pe-lg-0">Overall, 
+                        the Abandoned Object Detection project combines the power 
+                        of computer vision, OpenCV, and real-time video analysis 
+                        to provide an automated and proactive approach to identify 
+                        and handle abandoned objects.</p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-6 mt-7 pt-7 mt-lg-0 blockabout" >
+              <figure class="potoaboutwrap"  style="height: 100%; ">
+                  <img src="../static/css/aboutProject.jpg" alt="potoabout" 
+                  style="width: 100%; height: 100%; object-fit: cover;">
+              </figure>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section id="section about-section" class="pt-5 pb-5">
+  <!-- Content for section 3 -->
+  <div class="container wrapabout">
+    <div class="red"></div>
+    <div class="row">
+      <div class="col-lg-6 mt-5 mt-lg-0 blockabout">
+        <figure class="potoaboutwrap"  style=" height: 100%;">
+            <img src="../static/css/Abandoned-Object-thumb.jpg" alt="potoabout" 
+            style="width: 100%; height: 100%; object-fit: cover;">
+        </figure>
+      </div>
+      <div class="col-lg-6 align-items-center justify-content-left d-flex mb-5 mb-lg-0">
+            <div class="blockabout">
+                <div class="blockabout-inner text-center text-sm-start">
+                    <div class="title-big pb-3 ">
+                        <h3>Documentation of Project</h3>
+                    </div>
+                    <p class="description-p text-muted pe-0 pe-lg-0">
+                      Upon user video upload, the following steps are taken for abandoned object detection</p>
+                
+                    <ul class="description-p text-muted pe-0 pe-lg-0">                   
+                       <li>Initialization: A static picture is captured from the uploaded video, which serves as a reference frame. This initial frame should not contain any suspicious or moving objects. It provides a baseline for comparison.</li>
+                      <li>Frame Comparison: Each subsequent frame of the video is compared to the initial frame. The difference between the static picture and the real-time frames is computed to identify any changes or discrepancies.</li>
+                      <li>Object Identification: The filtered differences are analyzed to identify and track objects. The position and state of each object are continuously monitored throughout the video.</li>
+                      <li>Abandoned Object Detection: If an object is detected to be in motion, no further action is taken. However, if an object remains stationary in the same position for a certain duration, it is considered as an abandoned or suspicious object. This signifies a potential security concern that requires attention.</li>
+  </ul>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+</section>
+{% endblock %}

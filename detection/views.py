@@ -42,7 +42,7 @@ def signup(request):
             
             # Log in the user and redirect to the homepage
             login(request, user)
-            return render(request, 'upload_video.html')
+            return render(request, 'login.html')
         else:
             return render(request, 'signup.html', {'error': 'Passwords do not match'})
     
@@ -59,7 +59,7 @@ def login_view(request):
             # Log in the user and redirect to the homepage
             login(request, user)    
             
-            return render(request, 'upload_video.html')
+            return redirect('upload_video')
         else:
             return render(request, 'login.html', {'error': 'Invalid username or password'})
     
@@ -72,9 +72,22 @@ def upload_video(request):
         new_entry.video_file.save(video_file.name, video_file)
 
         video_path = new_entry.video_file.path
-
-        return detect_object(video_path)
+        detect_object(video_path)
+        return HttpResponse('Video uploaded successfully')
     
     return render(request, 'upload_video.html')
 
+def base(request):
+    if request.method == 'POST' and request.FILES.get('video'):
+        video_file = request.FILES['video']        
+        new_entry = DetectionVideo()
+        new_entry.video_file.save(video_file.name, video_file)
 
+        video_path = new_entry.video_file.path
+        detect_object(video_path)
+        return HttpResponse('Video uploaded successfully')
+    
+    return render(request, 'abandoned_object_detection.html')
+
+def documentation(request):
+    return render(request, 'doc.html')

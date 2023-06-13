@@ -18,7 +18,6 @@ def detect_object(file_path):
     det = 1
 
     tracker = ObjectTracker()
-    print(file_path + " jhbjhb")
     firstframe_path = fc.initialFrameCreation(file_path) + '.jpg'
     firstframe = cv2.imread(firstframe_path)
     firstframe_gray = cv2.cvtColor(firstframe, cv2.COLOR_BGR2GRAY)

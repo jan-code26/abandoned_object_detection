@@ -1,0 +1,121 @@
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 1em;
+    color: #777;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+   }
+   
+   h1, h2, h3, h4, h5, h6 {
+    color: #333;
+    line-height: 1.4;
+    font-weight: 700;
+   }
+   
+   .mx-width {
+    max-width: 960px;
+    margin: 0 auto;
+   }
+   
+   a, a:hover {
+    color: #563d7c;
+    text-decoration: none;
+   }
+   
+   #site-title img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+   }
+   
+   header {
+    padding-bottom: 50px;
+   }
+   
+   .jumbotron-fluid {
+    padding: 0;
+   }
+   
+   .parallax {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed!important;
+    overflow: hidden;
+   }
+   
+   .parallax-pattern-overlay {
+    background-image: url(https://www.transparenttextures.com/patterns/connected.png);
+    background-repeat: repeat;
+   }
+   
+   #site-title {
+    max-width: 150px;
+   }
+   
+   .display-2 {
+    font-family: 'Lato';
+    font-size: 60px;
+    line-height: 1;
+    font-weight: 300;
+    color: #fff;
+   }
+   
+   .learn {
+    font-family: 'Lato';
+    font-size: 27px;
+    line-height: 1.4;
+    font-weight: 300;
+    color: #fff;
+   }
+  
+  #section2 {
+    background-color: #cccccc;
+    color: #333333;
+  }
+  
+  #section3 {
+    background-color: #999999;
+    color: #ffffff;
+  }
+
+  #about-section {
+    background: rgba(32, 33, 36, 0.1);
+    position: relative;
+}
+
+.blockabout {
+    padding: 20px;
+    background: white;
+}
+
+.blockabout-inner {
+    padding: 30px;
+    border: 1px solid rgba(32, 33, 36, 0.1);
+}
+
+.sosmed-horizontal a i {
+    border: 1px solid #070707;
+    border-radius: 50%;
+    color: #070707;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    margin: auto 3px;
+    font-size: 15px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.rey-btn {
+    border: 2px solid #070707;
+    padding: 10px 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: all 0.3s;
+}

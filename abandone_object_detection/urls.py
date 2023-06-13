@@ -27,6 +27,8 @@ urlpatterns = [
     path('', views.login_view, name='login'),
     path('detect/', views.abandoned_object_detection, name='abandoned_object_detection'),
     path('upload_video/', views.upload_video, name='upload_video'),
+    path('abandoned_object_detection/', views.base, name='abandoned_object_detection'),
+    path('documentation/', views.documentation, name='documentation'),
     # path('detect_object/', detect_object, name='detect_object'),
 
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
